@@ -1,0 +1,11 @@
+
+function test:
+    trigger:
+        ldc "hello beans"
+        astore 0
+        aload 0
+        pop
+        iconst_1
+        invokestatic org/byteskript/bytecode/Test, "test", "(I)I", false
+        invokestatic java/lang/Boolean, "valueOf", "(Z)Ljava/lang/Boolean;", false
+        areturn
