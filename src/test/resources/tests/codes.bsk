@@ -5,6 +5,19 @@ function test:
         astore 0
         aload 0
         pop
+        bipush 6
+        istore 1
+        iload 1
+        dup
+        iadd
+        invokestatic java/lang/Integer, "valueOf", "(I)Ljava/lang/Integer;", false
+        assert top is 12
+
+        iconst_0
+        ifeq l0
+        assert true is false
+        l0
+
         iconst_1
         invokestatic org/byteskript/bytecode/Test, "test", "(I)I", false
         invokestatic java/lang/Boolean, "valueOf", "(Z)Ljava/lang/Boolean;", false
