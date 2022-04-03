@@ -5,6 +5,8 @@ import org.byteskript.bytecode.syntax.constant.Const;
 import org.byteskript.bytecode.syntax.constant.LDC;
 import org.byteskript.bytecode.syntax.constant.Push;
 import org.byteskript.bytecode.syntax.conversion.NumberConversion;
+import org.byteskript.bytecode.syntax.error.Throw;
+import org.byteskript.bytecode.syntax.error.TryCatch;
 import org.byteskript.bytecode.syntax.generic.*;
 import org.byteskript.bytecode.syntax.invoke.FieldAccess;
 import org.byteskript.bytecode.syntax.invoke.InvokeNormal;
@@ -33,6 +35,7 @@ public class Bytecode extends ModifiableLibrary {
         );
         registerSyntax(CompileState.CODE_BODY,
             new LabelEffect(),
+            new Jump(),
             new IfNull(),
             new IfSimple(),
             new IfSmallComparison(),
@@ -43,7 +46,6 @@ public class Bytecode extends ModifiableLibrary {
             new DUP(),
             new POP(),
             new NOP(),
-            new Throw(),
             new CheckCast(),
             new InstanceOf()
         );
@@ -59,6 +61,10 @@ public class Bytecode extends ModifiableLibrary {
             new Const(),
             new Push(),
             new LDC()
+        );
+        registerSyntax(CompileState.CODE_BODY,
+            new Throw(),
+            new TryCatch()
         );
         registerSyntax(CompileState.CODE_BODY,
             new NewArray(),

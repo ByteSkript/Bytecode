@@ -18,6 +18,20 @@ function test:
         assert true is false
         l0
 
+        set {var} to 1
+        trycatchblock l1, l2, l3, null
+        l1
+        assert true is false
+        l2
+        set {var} to 2
+        goto l4
+        l3
+        astore 0
+        set {var} to 3
+        aload 0
+        assert top exists
+        l4
+
         iconst_1
         invokestatic org/byteskript/bytecode/Test, "test", "(I)I", false
         invokestatic java/lang/Boolean, "valueOf", "(Z)Ljava/lang/Boolean;", false

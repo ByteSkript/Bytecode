@@ -1,4 +1,4 @@
-package org.byteskript.bytecode.syntax.generic;
+package org.byteskript.bytecode.syntax.error;
 
 import mx.kenzie.foundation.MethodBuilder;
 import org.byteskript.bytecode.Bytecode;
@@ -16,7 +16,7 @@ public class Throw extends Effect {
     
     @Override
     public Pattern.Match match(String thing, Context context) {
-        if (!thing.equals("arraylength")) return null;
+        if (!thing.equals("athrow")) return null;
         return super.match(thing, context);
     }
     
