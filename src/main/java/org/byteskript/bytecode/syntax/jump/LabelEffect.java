@@ -1,9 +1,11 @@
 package org.byteskript.bytecode.syntax.jump;
 
 import mx.kenzie.foundation.MethodBuilder;
+import mx.kenzie.foundation.Type;
 import mx.kenzie.foundation.compiler.State;
 import org.byteskript.bytecode.Bytecode;
 import org.byteskript.skript.api.syntax.Literal;
+import org.byteskript.skript.compiler.CommonTypes;
 import org.byteskript.skript.compiler.CompileState;
 import org.byteskript.skript.compiler.Context;
 import org.byteskript.skript.compiler.Pattern;
@@ -21,6 +23,11 @@ public class LabelEffect extends Literal<Integer> {
     public Pattern.Match match(String thing, Context context) {
         if (!thing.startsWith("l")) return null;
         return super.match(thing, context);
+    }
+    
+    @Override
+    public Type getReturnType() {
+        return CommonTypes.INTEGER;
     }
     
     @Override
