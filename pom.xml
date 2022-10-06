@@ -9,6 +9,7 @@
     <version>1.0.0</version>
     <name>Bytecode</name>
     <description>A ByteSkript library that allows writing raw bytecode.</description>
+    <url>https://github.com/ByteSkript/Bytecode</url>
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
